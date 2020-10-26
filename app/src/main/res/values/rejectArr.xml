@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="avto">Pop up Spinner</string>
+     <string-array name="rejectArray">
+         <item>Müştəri ilə əlaqə saxlamaq mümkün olmadı</item>
+     </string-array>
+</resources>

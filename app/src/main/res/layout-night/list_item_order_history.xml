@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.anvarpasha.avtogarage.utils.DateUtils"/>
+
+        <variable
+            name="model"
+            type="com.anvarpasha.avtogarage.data.network.model.remote.Order" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/idTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/rubik"
+                android:layout_marginTop="16dp"
+                android:text="@{'#'+String.valueOf(model.id)}"
+                tools:text="#123425"
+                android:textColor="#8B8E8D"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{model.productName}"
+                android:fontFamily="@font/rubik_medium"
+                tools:text="Sol qapi desteyi"
+                android:textColor="#212738"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idTxt" />
+
+            <ImageView
+                android:id="@+id/socialImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
+
+
+            <TextView
+                android:id="@+id/mediaNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/rubik"
+                android:text="@{DateUtils.capitalize(model.network)}"
+                android:textColor="#212738"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/socialImg"
+                app:layout_constraintStart_toEndOf="@+id/socialImg"
+                app:layout_constraintTop_toTopOf="@+id/socialImg"
+                tools:text="Instagram" />
+
+            <TextView
+                android:id="@+id/statusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/list_order_status"
+                android:fontFamily="@font/rubik"
+                android:padding="4dp"
+                android:text="@{model.statusName}"
+                tools:text="Cavab gozleyir"
+                android:textColor="#D68F1D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                tools:text="12.23.2133"
+                android:text="@{DateUtils.parseDate(model.createdData)}"
+                android:textColor="#ACACAC"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

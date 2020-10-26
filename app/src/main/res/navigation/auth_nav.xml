@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        tools:layout="@layout/sign_in_fragment"
+        android:name="com.anvarpasha.avtogarage.ui.auth.signIn.SignInFragment"
+        android:label=" " >
+        <action
+            android:id="@+id/action_signInFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        tools:layout="@layout/otp_fragment"
+        android:name="com.anvarpasha.avtogarage.ui.auth.otp.OtpFragment"
+        android:label="@string/back" >
+        <action
+            android:id="@+id/action_otpFragment_to_forgotFragment"
+            app:destination="@id/forgotFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotFragment"
+        tools:layout="@layout/forgot_fragment"
+        android:name="com.anvarpasha.avtogarage.ui.auth.forgotPass.ForgotFragment"
+        android:label="@string/back" >
+        <argument
+            android:name="data"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_forgotFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/signInFragment" />
+    </fragment>
+</navigation>

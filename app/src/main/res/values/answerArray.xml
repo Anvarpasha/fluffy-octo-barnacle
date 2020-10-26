@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autogarage">Pop up Spinner</string>
+    <string-array name="answerArray">
+        <item>Müştəri məlumatlandırıldı</item>
+        <item>Müştəri imtina etdi</item>
+        <item>Ünvana çatdılırma yoxdur</item>
+        <item>Qiymət bahadır</item>
+        <item>Avtomobilin ili köhnədir</item>
+        <item>Anbarda ehtiyat hissəsi mövcud deyil</item>
+        <item>Ehtiyat hissəsi gec çatdırılır</item>
+
+    </string-array>
+</resources>

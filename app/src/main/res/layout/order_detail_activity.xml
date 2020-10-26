@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.anvarpasha.avtogarage.ui.orderDetail.OrderDetailVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/waiting_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="0dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_comment"
+            android:layout_width="0dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/constr_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProduct">
+
+            <TextView
+                android:id="@+id/tvcomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="62dp"
+                android:background="@color/transparent"
+                android:text="@string/comment"
+                android:textColor="#D68F1D"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Şərh" />
+
+            <TextView
+                android:id="@+id/tvcommentText"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/transparent"
+                android:text="@{viewModel.properties.data.comment}"
+                android:textColor="#D68F1D"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Alışdırma şamı ancaq original, viewModel.properties.data hyundai veracruz 3.8 motor V-6 " />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReject"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/rejected"
+            android:textAllCaps="false"
+            android:textColor="#E35141"
+            app:backgroundTint="#26E35141"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnAnswered"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvVinCode" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAnswered"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/answered"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnReject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnReject"
+            app:layout_constraintTop_toTopOf="@+id/btnReject"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvVinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Avtomobilin Vin kodu"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvYearofCar" />
+
+        <TextView
+            android:id="@+id/tvYearofCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Avtomobilin buraxilisi"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCar"
+            app:layout_constraintTop_toBottomOf="@+id/tvCar" />
+
+        <TextView
+            android:id="@+id/tvCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/car"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint_comment" />
+
+        <TextView
+            android:id="@+id/tvCarType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.properties.data.carName}"
+            tools:text="Hyundai Veracruz"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCar" />
+
+        <TextView
+            android:id="@+id/tvProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/product"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvrenewalDate" />
+
+        <TextView
+            android:id="@+id/tvrenewalDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/renewal_date"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddingDate" />
+
+        <TextView
+            android:id="@+id/tvAddingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/addingDate"
+            android:textColor="#7C7C7C"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvrenewalDate"
+            app:layout_constraintTop_toBottomOf="@+id/imgFbBack" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.properties.data.productName}"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProduct" />
+
+        <TextView
+            android:id="@+id/renewalDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.properties.data.updatedDate}"
+            tools:text="@string/renewaldate"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvrenewalDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvrenewalDate" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            tools:text="@string/addingTime"
+            android:text="@{viewModel.properties.data.createdData}"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddingDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAddingDate" />
+
+        <ImageView
+            android:id="@+id/imgFbBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailId"
+            app:srcCompat="@drawable/facebookicon" />
+
+
+
+        <TextView
+            android:id="@+id/tvCustomerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            tools:text="@string/customerNumber"
+            android:text="@{viewModel.properties.data.clientPhone}"
+            android:textColor="#828282"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFbBack"
+            app:layout_constraintStart_toEndOf="@+id/imgFbBack" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            tools:text="@string/customer_name"
+            android:text="@{viewModel.properties.data.clientName}"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvCustomerNumber"
+            app:layout_constraintStart_toStartOf="@+id/tvCustomerNumber"
+            app:layout_constraintTop_toTopOf="@+id/imgFbBack" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFbBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgFbBack"
+            app:srcCompat="@drawable/whatsappicon" />
+
+        <TextView
+            android:id="@+id/detailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            tools:text="@string/detailId"
+            android:text="@{String.valueOf(viewModel.properties.data.id)}"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/tvWaitingResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="19dp"
+            android:background="@drawable/list_order_status"
+            tools:text="@string/waitingResponse"
+            android:text="@{viewModel.properties.data.statusName}"
+            android:textColor="#D68F1D"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/detailId" />
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.properties.data.productName}"
+            tools:text="Alisdirma sami"
+            android:textColor="#212738"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProduct"
+            app:layout_constraintEnd_toEndOf="@+id/renewalDate"
+            app:layout_constraintTop_toTopOf="@+id/tvProduct" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#212738"
+            android:text="@{viewModel.properties.data.carReleaseYear}"
+            tools:text="11.02.1999"
+            app:layout_constraintBottom_toBottomOf="@+id/tvYearofCar"
+            app:layout_constraintEnd_toEndOf="@+id/tvCarType"
+            app:layout_constraintTop_toTopOf="@+id/tvYearofCar" />
+
+        <TextView
+            android:id="@+id/tvVin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#212738"
+            android:text="@{viewModel.properties.data.carVin}"
+            tools:text="wkmfj22313"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVinCode"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/tvVinCode" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
